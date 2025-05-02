@@ -1,0 +1,209 @@
+.swiper-button-next,
+.swiper-button-prev
+{
+    top: auto;
+    bottom: 12px;
+    left: 12px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+    margin: 0;
+
+    transition: color .25s linear;
+    transition: .2s linear;
+    transform: none;
+
+    color: var(--primary_color);
+    border-radius: 50%;
+    background: #eeeff1;
+}
+
+
+.swiper-button-next
+{
+    left: 74px;
+}
+
+
+.swiper-button-next:before,
+.swiper-button-prev:before
+{
+    position: absolute;
+    z-index: 1;
+
+    display: block;
+
+    width: 0;
+    height: 0;
+    margin: auto;
+
+    content: '';
+    transition: .25s linear;
+    pointer-events: none;
+
+    border-radius: inherit;
+    background: var(--accent_color);
+
+    inset: 0;
+}
+
+
+.swiper-button-next:after,
+.swiper-button-prev:after
+{
+    display: none;
+}
+
+
+.swiper-button-next .icon,
+.swiper-button-prev .icon
+{
+    position: relative;
+    z-index: 3;
+
+    display: block;
+
+    width: 24px;
+    height: 24px;
+}
+
+.swiper-button-next .icon
+{
+    transform: rotate(180deg);
+}
+
+
+.swiper-button-next .progress
+{
+    position: absolute;
+    z-index: 2;
+
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    margin: auto;
+
+    transition: color .25s linear;
+    transform: rotate(-90deg);
+    pointer-events: none;
+
+    color: var(--accent_color);
+
+    inset: 0;
+}
+
+.swiper-button-next .progress circle
+{
+    animation: draw 2.5s linear infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-direction: normal;
+
+    animation-fill-mode: forwards;
+    stroke-dasharray: 301.59;
+    stroke-dashoffset: 301.59;
+}
+
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover,
+.swiper-button-next:hover .progress
+{
+    color: #fff;
+}
+
+
+.swiper-button-next:hover:before,
+.swiper-button-prev:hover:before
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+{
+    margin: 0;
+}
+
+
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction
+{
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100%;
+    height: 10px;
+
+    pointer-events: none;
+
+    gap: 10px;
+}
+
+
+.swiper-pagination-bullet
+{
+    display: block;
+
+    width: 10px;
+    height: 10px;
+
+    transition: background .2s linear;
+    pointer-events: auto;
+
+    opacity: 1;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .3);
+
+            backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+}
+
+
+.swiper-pagination-bullet:hover,
+.swiper-pagination-bullet.active
+{
+    background: #fff;
+}
+
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet
+{
+    margin: 0;
+}
+
+
+
+@keyframes draw
+{
+    0%
+    {
+        stroke-dashoffset: 301.59;
+    }
+    80%
+    {
+        stroke-dashoffset: 0;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}

@@ -1,0 +1,328 @@
+@media print,
+(max-width: 1899px)
+{
+    /*-------------------
+        Global styles
+    -------------------*/
+    :root
+    {
+        --sidebar_width: 330px;
+        --font_size_title_big: 64px;
+    }
+
+
+
+    /*---------------
+        Page head
+    ---------------*/
+    .page_head .cont
+    {
+        gap: 16px;
+    }
+
+
+
+    /*---------------
+        Accordion
+    ---------------*/
+    .accordion_item .head,
+    .accordion_item .data
+    {
+        padding-left: 354px;
+    }
+
+
+
+    /*----------------
+        Typography
+    ----------------*/
+    .text_block section
+    {
+        padding: 48px 0;
+    }
+
+
+    .text_block .blockquote p
+    {
+        font-size: 36px;
+    }
+
+
+
+    /*-----------------
+        Main slider
+    -----------------*/
+    .main_slider
+    {
+        margin-bottom: 80px;
+        padding-top: 80px;
+    }
+
+
+    .main_slider .swiper .data
+    {
+        height: 732px;
+    }
+
+
+    .main_slider .swiper .products
+    {
+        width: 448px;
+    }
+
+
+
+    /*----------------
+        Info block
+    ----------------*/
+    .info_block .data .title
+    {
+        font-size: var(--font_size_title_small);
+    }
+
+
+
+    /*-----------------------
+        Video collections
+    -----------------------*/
+    .video_collections .main
+    {
+        height: 732px;
+    }
+
+
+    .video_collections .main .name
+    {
+        font-size: var(--font_size_title_small);
+
+        width: 526px;
+    }
+
+
+    .video_collections .main .desc
+    {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+
+        width: 526px;
+
+        -webkit-line-clamp: 4;
+    }
+
+
+    .video_collections .main .play_btn .icon
+    {
+        width: 86px;
+        height: 86px;
+    }
+
+
+    .video_collections .main .play_btn .icon svg
+    {
+        width: 18px;
+        height: 22px;
+    }
+
+
+
+    /*-----------
+        Lines
+    -----------*/
+    .lines .item .thumb
+    {
+        padding-bottom: 163.333%;
+    }
+
+
+    .lines .item .name
+    {
+        font-size: 24px;
+    }
+
+
+
+    /*-------------
+        Reviews
+    -------------*/
+    .reviews .review .text
+    {
+        font-size: 16px;
+    }
+
+
+
+    /*---------------
+        Documents
+    ---------------*/
+    .documents .section .title
+    {
+        font-size: calc(var(--font_size_title_small) - 4px);
+    }
+
+
+    .documents .item .name
+    {
+        width: calc(100% - 354px);
+    }
+
+
+    .documents .item .type,
+    .documents .item .download
+    {
+        width: 177px;
+    }
+
+
+
+    /*----------------
+        Error page
+    ----------------*/
+    .error_page
+    {
+        padding: 201px 0 200px;
+    }
+
+
+
+    /*--------------
+        Articles
+    --------------*/
+    .articles .cont
+    {
+        gap: 80px;
+    }
+
+
+    .articles .article.big .thumb
+    {
+        min-height: 381px;
+    }
+
+
+    .articles .article.big .info
+    {
+        padding: 16px 8px 8px;
+
+        gap: 24px;
+    }
+
+
+    .articles .article.big .name
+    {
+        font-size: 32px;
+    }
+
+
+
+    /*--------------
+        Products
+    --------------*/
+    .products .row > *
+    {
+        width: calc(33.333% - 24px);
+    }
+
+
+    .products .product.temp_hide
+    {
+        display: none;
+    }
+
+
+
+    /*------------------
+        Product info
+    ------------------*/
+    .product_info .images
+    {
+        width: calc(100% - 564px);
+    }
+
+
+    .product_info .images .swiper
+    {
+        width: calc(100% - 76px);
+    }
+
+
+    .product_info .images .link .image
+    {
+        height: 614px;
+        padding: 64px;
+    }
+
+
+    .product_info .images .thumbs
+    {
+        width: 68px;
+
+        gap: 6px;
+    }
+
+
+    .product_info .images .thumbs .image
+    {
+        padding: 11px;
+    }
+
+
+    .product_info .data
+    {
+        width: 542px;
+    }
+
+
+    .product_info .price
+    {
+        font-size: 36px;
+    }
+
+
+    .product_info .price .old
+    {
+        font-size: 20px;
+    }
+
+
+
+    /*------------------
+        Article info
+    ------------------*/
+    .article_info .head
+    {
+        width: 684px;
+    }
+
+
+    .article_info .main_image
+    {
+        margin-bottom: 80px;
+    }
+
+
+    .article_info .text_block
+    {
+        width: 684px;
+    }
+
+
+
+    /*-----------------------
+        PopUp - Cart info
+    -----------------------*/
+    .cart_info
+    {
+        width: 708px;
+    }
+
+
+
+    /*---------------------------
+        PopUp - Checkout info
+    ---------------------------*/
+    .checkout_info
+    {
+        width: calc(100vw - 694px);
+    }
+}
