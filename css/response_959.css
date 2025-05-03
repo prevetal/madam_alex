@@ -1321,4 +1321,41 @@
         font-weight: 500;
         line-height: 9px;
     }
+
+
+
+    /*-------------------------
+        PopUp - Review info
+    -------------------------*/
+    .review_info .close_btn
+    {
+        top: 32px;
+        right: 12px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .review_info .close_btn .icon
+    {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .review_info .swiper
+    {
+        padding: 32px 16px 16px;
+    }
+
+
+    .review_info .swiper-horizontal > .swiper-pagination-bullets,
+    .review_info .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .review_info .swiper-pagination-custom,
+    .review_info .swiper-pagination-fraction
+    {
+        height: 32px;
+        padding: 12px;
+    }
 }

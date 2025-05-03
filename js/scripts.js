@@ -284,6 +284,77 @@ document.addEventListener('DOMContentLoaded', function() {
 	})
 
 
+	// Ajax modals
+	$('body').on('click', '[data-type="ajax"]', function (e) {
+		e.preventDefault()
+
+		Fancybox.show([{
+			src: $(this).attr('href'),
+			type: 'ajax'
+		}], {
+			on: {
+				reveal: () => {
+					// Review modal slider
+					let reviewModalSlider = document.querySelector('.review_info .swiper')
+
+					if (reviewModalSlider) {
+						new Swiper('.review_info .swiper', {
+							loop: true,
+							speed: 750,
+							watchSlidesProgress: true,
+							slideActiveClass: 'active',
+							slideVisibleClass: 'visible',
+							spaceBetween: 24,
+							slidesPerView: 1,
+							navigation: {
+								nextEl: '.swiper-button-next',
+								prevEl: '.swiper-button-prev'
+							},
+							pagination: {
+								el: '.swiper-pagination',
+								type: 'bullets',
+								clickable: true,
+								bulletActiveClass: 'active'
+							},
+							lazy: true,
+							autoplay: {
+								disableOnInteraction: false
+							},
+							on: {
+								init: swiper => setTimeout(() => {
+									$(swiper.el).find('.swiper-pagination-bullet').eq(swiper.realIndex).addClass('animate_first')
+
+									$(swiper.el).find('.swiper-button-next').append('<svg class="progress" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2" fill="none"/></svg>')
+
+									swiper.params.autoplay.delay = 10000
+									swiper.autoplay.start()
+								}),
+								beforeTransitionStart: swiper => setTimeout(() => {
+									$(swiper.el).find('.swiper-pagination-bullet').removeClass('animate_first animate')
+									$(swiper.el).find('.swiper-pagination-bullet').eq(swiper.realIndex).addClass('animate')
+								}),
+								slideChangeTransitionStart: swiper => setTimeout(() => {
+									$(swiper.el).find('.swiper-button-next .progress').remove()
+								}),
+								slideChangeTransitionEnd: swiper => setTimeout(() => {
+									$(swiper.el).find('.swiper-button-next').append('<svg class="progress" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2" fill="none"/></svg>')
+								})
+							}
+						})
+					}
+				}
+			}
+		})
+	})
+
+
+	$('body').on('click', '.review_info .close_btn', function (e) {
+		e.preventDefault()
+
+		Fancybox.close()
+	})
+
+
 	// Phone input mask
 	const phoneInputs = document.querySelectorAll('input[type=tel]')
 

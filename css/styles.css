@@ -2674,12 +2674,14 @@ aside
     background: rgba(255, 255, 255, .70);
 }
 
+
 .main_slider .swiper-pagination-bullet.animate_first:after
 {
     width: 100%;
 
     transition: width 10s linear;
 }
+
 
 .main_slider .swiper-pagination-bullet.animate:after
 {
@@ -3339,11 +3341,13 @@ aside
     background: #eeeff1;
 }
 
+
 .reviews .swiper-button-prev
 {
     right: 62px;
     left: auto;
 }
+
 
 .reviews .swiper-button-next
 {
@@ -3355,6 +3359,10 @@ aside
 .reviews .review
 {
     position: relative;
+
+    display: block;
+
+    text-decoration: none;
 
     color: #fff;
 }
@@ -3419,11 +3427,11 @@ aside
     position: relative;
 
     display: block;
+    overflow: hidden;
 
     padding-bottom: 163.333%;
 
     border-radius: 12px;
-    background: #ddd;
 }
 
 
@@ -3438,6 +3446,8 @@ aside
 
     width: 100%;
     height: 100%;
+
+    transition: transform .25s linear;
 
     border-radius: inherit;
 
@@ -3479,6 +3489,12 @@ aside
 
             backdrop-filter: blur(100px);
     -webkit-backdrop-filter: blur(100px);
+}
+
+
+.reviews .review:hover .thumb img
+{
+    transform: scale(1.05);
 }
 
 
@@ -7169,4 +7185,289 @@ footer .copyright
     letter-spacing: -.28px;
 
     color: var(--accent_color);
+}
+
+
+
+/*-------------------------
+    PopUp - Review info
+-------------------------*/
+.review_info
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    width: 100% !important;
+    height: 100%;
+    padding: 0 !important;
+
+    border-radius: 0;
+    background: rgba(0, 0, 0, .60);
+
+            backdrop-filter: blur(150px);
+    -webkit-backdrop-filter: blur(150px);
+}
+
+
+.review_info .close_btn
+{
+    position: absolute;
+    z-index: 10;
+    top: 48px;
+    right: 48px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    transition: color .25s linear;
+
+    color: rgba(255, 255, 255, .7);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .3);
+
+            backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+.review_info .close_btn:before
+{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 7px;
+    left: 0;
+
+    display: block;
+
+    width: calc(100% - 16px);
+    height: 0;
+    margin: 0 auto;
+
+    content: '';
+    transition: .25s linear;
+    pointer-events: none;
+
+    border-radius: inherit;
+    background: var(--accent_color);
+}
+
+
+.review_info .close_btn .icon
+{
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 24px;
+    height: 24px;
+}
+
+
+.review_info .close_btn:hover
+{
+    color: #fff;
+}
+
+
+.review_info .close_btn:hover:before
+{
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.review_info .reviews
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.review_info .swiper
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 76px 48px 48px;
+}
+
+
+.review_info .swiper-slide
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.review_info .swiper-button-next,
+.review_info .swiper-button-prev
+{
+    top: 0;
+    bottom: 0;
+
+    margin: auto 0;
+
+    color: rgba(255, 255, 255, .4);
+    background: rgba(255, 255, 255, .2);
+}
+
+
+.review_info .swiper-button-prev
+{
+    right: auto;
+    left: 50%;
+
+    margin-left: -373px;
+}
+
+
+.review_info .swiper-button-next
+{
+    right: 50%;
+    left: auto;
+
+    margin-right: -373px;
+}
+
+
+.review_info .swiper-button-next .icon,
+.review_info .swiper-button-prev .icon
+{
+    display: block;
+
+    width: 25px;
+    height: 24px;
+
+    transition: opacity .25s linear;
+
+    opacity: .4;
+}
+
+
+.review_info .swiper-button-next .progress
+{
+    color: rgba(255, 255, 255, .4);
+}
+
+
+.review_info .swiper-button-next .progress circle
+{
+    animation: draw 12.5s linear infinite;
+}
+
+
+.review_info .swiper-button-next:hover,
+.review_info .swiper-button-prev:hover,
+.review_info .swiper-button-next:hover .progress
+{
+    color: #fff;
+}
+
+
+.review_info .swiper-button-next:hover .icon,
+.review_info .swiper-button-prev:hover .icon
+{
+    opacity: 1;
+}
+
+
+.review_info .swiper-horizontal > .swiper-pagination-bullets,
+.review_info .swiper-pagination-bullets.swiper-pagination-horizontal,
+.review_info .swiper-pagination-custom,
+.review_info .swiper-pagination-fraction
+{
+    top: 0;
+    bottom: auto;
+
+    flex-wrap: nowrap;
+
+    width: 100%;
+    height: 40px;
+    padding: 16px;
+}
+
+
+.review_info .swiper-pagination-bullet
+{
+    width: 100%;
+    height: 8px;
+
+    border-radius: 4px;
+    background: rgba(255, 255, 255, .20);
+
+            backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+.review_info .swiper-pagination-bullet:after
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    content: '';
+
+    border-radius: 4px;
+    background: rgba(255, 255, 255, .70);
+}
+
+
+.review_info .swiper-pagination-bullet.animate_first:after
+{
+    width: 100%;
+
+    transition: width 10s linear;
+}
+
+
+.review_info .swiper-pagination-bullet.animate:after
+{
+    width: 100%;
+
+    transition: width 10s linear .75s;
+}
+
+
+
+.review_info .reviews .review
+{
+    width: 508px;
+    max-width: 100%;
+}
+
+
+.review_info .reviews .review .thumb
+{
+    padding-bottom: 162.795%;
 }
