@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 	// Product to cart
-	$('.product .buy_btn,.product_info .buy_btn').click(function(e) {
+	$('.product .buy_btn, .product_info .buy_btn, .product_info .mob_buy_btn .btn').click(function(e) {
 		e.preventDefault()
 
 		$('.product_added_modal').fadeIn(200)

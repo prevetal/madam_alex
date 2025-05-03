@@ -1041,9 +1041,16 @@
         scroll-snap-align: start;
     }
 
+
     .product_info .tabs .btn + .btn
     {
         margin-left: 12px;
+    }
+
+
+    .product_info .mob_buy_btn
+    {
+        display: block;
     }
 
 
