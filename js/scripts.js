@@ -75,37 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	})
 
 
-	// Lines slider
-	const linesSliders = [],
-		lines = document.querySelectorAll('.lines .swiper')
-
-	lines.forEach((el, i) => {
-		el.classList.add('lines_s' + i)
-
-		let options = {
-			loop: false,
-			loopAdditionalSlides: 1,
-			speed: 500,
-			watchSlidesProgress: true,
-			slideActiveClass: 'active',
-			slideVisibleClass: 'visible',
-			lazy: true,
-			breakpoints: {
-				0: {
-					spaceBetween: 13,
-					slidesPerView: 'auto'
-				},
-				1200: {
-					spaceBetween: 24,
-					slidesPerView: 4
-				}
-			}
-		}
-
-		linesSliders.push(new Swiper('.lines_s' + i, options))
-	})
-
-
 	// Reviews slider
 	const reviewsSliders = [],
 		reviews = document.querySelectorAll('.reviews .swiper')
@@ -400,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	$('.cart_info .close_btn, .overlay').click(function(e) {
 		e.preventDefault()
 
-		$('.cart_info').removeClass('show')
+		$('.cart_info, .checkout_info').removeClass('show')
 		$('.overlay').fadeOut(200)
 	})
 
@@ -521,6 +490,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		$('.product_added_modal').fadeOut(100)
 		$('.product_added_modal .progress').removeClass('animate')
+	})
+
+
+	// Mob. menu
+	$('header .mob_menu_btn').click(function(e) {
+		e.preventDefault()
+
+		$('body').toggleClass('lock')
+		$(this).toggleClass('active')
+		$('.mob_menu').toggleClass('show')
 	})
 })
 

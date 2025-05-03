@@ -271,9 +271,66 @@
     /*-----------
         Lines
     -----------*/
-    .lines .swiper-slide
+    .lines .row
     {
+        display: block;
+        overflow: auto;
+
+        width: calc(100% + 32px);
+        margin: 0 -16px;
+        padding: 0 16px;
+
+        white-space: nowrap;
+
+        scroll-padding: 0 16px;
+        scroll-snap-type: x mandatory;
+        scrollbar-color: transparent transparent !important;
+        scrollbar-width: thin !important;
+    }
+
+
+    .lines .row::-webkit-scrollbar
+    {
+        display: none !important;
+
+        width: 0 !important;
+        height: 0 !important;
+
+        background-color: transparent !important;
+    }
+
+
+    .lines .row::-webkit-scrollbar-thumb
+    {
+        background-color: transparent !important;
+    }
+
+
+    .lines .row > *
+    {
+        display: inline-block;
+
         width: 270px;
+        max-width: none;
+        margin: 0;
+
+        vertical-align: top;
+        white-space: normal;
+
+        scroll-snap-align: start;
+    }
+
+
+    .lines .row > * + *
+    {
+        margin-left: 12px;
+    }
+
+
+    .lines .item:hover,
+    .lines .row:hover .item:not(:hover)
+    {
+        flex: 1;
     }
 
 

@@ -168,6 +168,12 @@
     /*-----------
         Lines
     -----------*/
+    .lines .item .thumb
+    {
+        height: 441px;
+    }
+
+
     .lines .item .name
     {
         font-size: 18px;
