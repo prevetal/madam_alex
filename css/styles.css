@@ -789,8 +789,12 @@ header .mob_menu_btn.active .icon + .icon
 
 header .logo
 {
+    position: relative;
+
     display: block;
 
+    width: 30px;
+    height: 30px;
     margin-right: auto;
 
     text-decoration: none;
@@ -803,8 +807,30 @@ header .logo img
 {
     display: block;
 
-    width: 30px;
-    height: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+
+header .logo img + img
+{
+    display: none;
+}
+
+
+header .logo video
+{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
 }
 
 
@@ -1033,6 +1059,45 @@ header .info .btn:hover:before
 .bg_dark header .info .mob_icon
 {
     color: #fff;
+}
+
+
+
+.lock .bg_dark header
+{
+    color: var(--text_color);
+    background: var(--bg);
+}
+
+
+.lock .bg_dark header .mob_menu_btn
+{
+    color: var(--text_color);
+    background: #eceef1;
+}
+
+
+.lock .bg_dark header .logo img
+{
+    display: none;
+}
+
+.lock .bg_dark header .logo img + img
+{
+    display: block;
+}
+
+
+.lock .bg_dark header .info .link,
+.lock .bg_dark header .info .btn
+{
+    background: #eceef1;
+}
+
+
+.lock .bg_dark header .info .mob_icon
+{
+    color: var(--text_color);
 }
 
 
@@ -2128,6 +2193,13 @@ aside
 }
 
 
+.text_block .table_wrap .radius
+{
+    border: 1px solid rgba(0, 0, 0, .20);
+    border-radius: 8px;
+}
+
+
 .text_block table
 {
     width: 100%;
@@ -2135,9 +2207,6 @@ aside
     table-layout: fixed;
     border-spacing: 0;
     border-collapse: collapse;
-
-    border: 1px solid rgba(0, 0, 0, .20);
-    border-radius: 8px;
 }
 
 
@@ -2153,7 +2222,13 @@ aside
     text-align: left;
     vertical-align: middle;
 
-    border: 1px solid rgba(0, 0, 0, .20);
+    border-bottom: 1px solid rgba(0, 0, 0, .20);
+}
+
+
+.text_block table th + th
+{
+    border-left: 1px solid rgba(0, 0, 0, .20);
 }
 
 
@@ -2168,8 +2243,18 @@ aside
     text-align: left;
     vertical-align: middle;
     letter-spacing: -.24px;
+}
 
-    border: 1px solid rgba(0, 0, 0, .20);
+
+.text_block table tr + tr td
+{
+    border-top: 1px solid rgba(0, 0, 0, .20);
+}
+
+
+.text_block table td + td
+{
+    border-left: 1px solid rgba(0, 0, 0, .20);
 }
 
 
@@ -2425,6 +2510,7 @@ aside
     width: 52px;
     height: 52px;
     margin: auto;
+    padding-left: 3px;
 
     color: #fff;
     border: 1px solid rgba(255, 255, 255, .40);
@@ -2727,12 +2813,6 @@ aside
 }
 
 
-.info_block:hover .image img
-{
-    transform: scale(1.05);
-}
-
-
 .info_block .data
 {
     display: flex;
@@ -2846,14 +2926,20 @@ aside
 }
 
 
-.info_block .data .link a:hover,
-.info_block .data .link a:hover .icon
+.info_block:hover .image img
+{
+    transform: scale(1.05);
+}
+
+
+.info_block:hover .data .link a,
+.info_block:hover .data .link a .icon
 {
     color: #fff;
 }
 
 
-.info_block .data .link a:hover:before
+.info_block:hover .data .link a:before
 {
     bottom: 0;
 
@@ -3991,6 +4077,10 @@ aside
 
 .article_info .back
 {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+
     display: flex;
 
     padding: 12px 0;
@@ -4388,6 +4478,7 @@ aside
     position: relative;
 
     display: block;
+    overflow: hidden;
 
     margin-bottom: 12px;
 
@@ -4407,6 +4498,8 @@ aside
 
     width: 100%;
     height: 100%;
+
+    transition: transform .3s linear;
 
     border-radius: inherit;
 
@@ -4590,22 +4683,6 @@ aside
 }
 
 
-.articles .article .link a:hover,
-.articles .article .link a:hover .icon
-{
-    color: #fff;
-}
-
-
-.articles .article .link a:hover:before
-{
-    bottom: 0;
-
-    width: 100%;
-    height: 100%;
-}
-
-
 .articles .article.big
 {
     display: flex;
@@ -4666,6 +4743,32 @@ aside
 .articles .article:hover
 {
     background: rgba(255, 255, 255, .70);
+
+    background-blend-mode: color-dodge, normal;
+            backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
+
+
+.articles .article:hover .thumb img
+{
+    transform: scale(1.1);
+}
+
+
+.articles .article:hover .link a,
+.articles .article:hover .link a .icon
+{
+    color: #fff;
+}
+
+
+.articles .article:hover .link a:before
+{
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -5176,6 +5279,12 @@ aside
 }
 
 
+.products .product .tags > *.mob_count
+{
+    display: none;
+}
+
+
 .products .product .tags .icon
 {
     display: block;
@@ -5362,6 +5471,9 @@ aside
 
 .product_info .images
 {
+    position: sticky;
+    top: 0;
+
     display: flex;
     align-content: flex-start;
     align-items: flex-start;
@@ -6365,12 +6477,13 @@ footer .copyright
     height: 100%;
     padding: 24px;
 
-    transition: transform .2s linear;
+    transition: transform 300ms ease-out;
 }
 
 
 .cart_info.show
 {
+    transition: transform 600ms ease-out;
     transform: translateX(-100%);
 }
 
@@ -6853,7 +6966,7 @@ footer .copyright
 .checkout_info
 {
     position: fixed;
-    z-index: 101;
+    z-index: 102;
     top: 0;
     right: 100%;
 
@@ -6861,12 +6974,13 @@ footer .copyright
     height: 100%;
     padding: 24px;
 
-    transition: transform .35s linear;
+    transition: transform 300ms ease-out;
 }
 
 
 .checkout_info.show
 {
+    transition: transform 600ms ease-out;
     transform: translateX(100%);
 }
 
@@ -7271,8 +7385,8 @@ footer .copyright
 
     display: block;
 
-    width: 24px;
-    height: 24px;
+    width: 34px;
+    height: 34px;
 }
 
 

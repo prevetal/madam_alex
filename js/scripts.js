@@ -456,7 +456,14 @@ document.addEventListener('DOMContentLoaded', function() {
 			Fancybox.show([{
 				src: document.getElementById('checkout_success_modal'),
 				type: 'inline'
-			}])
+			}], {
+				on: {
+					close: (fancybox, slide) => {
+						$('.cart_info, .checkout_info').removeClass('show')
+						$('.overlay').fadeOut(200)
+					}
+				}
+			})
 		}
 	})
 
@@ -571,6 +578,27 @@ document.addEventListener('DOMContentLoaded', function() {
 		$('body').toggleClass('lock')
 		$(this).toggleClass('active')
 		$('.mob_menu').toggleClass('show')
+	})
+
+
+	// Logo
+	$('header .logo.with_video').click(function(e) {
+		e.preventDefault()
+
+		const $logo = $('header .logo'),
+			$img = $logo.find('img'),
+			$video = $logo.find('video')[0]
+
+		$img.hide()
+		$($video).show()
+		$video.play()
+
+		$($video).off('ended')
+
+		$($video).on('ended', function() {
+			$($video).hide()
+			$img.show()
+		})
 	})
 })
 

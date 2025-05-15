@@ -116,7 +116,7 @@
     }
 
 
-    header .logo img
+    header .logo
     {
         width: 24px;
         height: 24px;
@@ -126,6 +126,23 @@
     header .menu
     {
         display: none;
+    }
+
+
+    header .info .link:hover:before,
+    header .info .btn:hover:before
+    {
+        bottom: 7px;
+
+        width: calc(100% - 16px);
+        height: 0;
+    }
+
+
+    header .info .link:hover .count,
+    header .info .btn:hover .count
+    {
+        background: var(--accent_color);
     }
 
 
@@ -143,6 +160,12 @@
     .page_head .cont
     {
         gap: 12px;
+    }
+
+
+    .page_title
+    {
+        letter-spacing: -2.8px;
     }
 
 

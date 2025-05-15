@@ -313,6 +313,8 @@
     --------------*/
     .products .product
     {
+        border-radius: 8px;
+
         gap: 0;
     }
 
@@ -321,6 +323,18 @@
     {
         height: 369px;
         margin-bottom: 16px;
+    }
+
+
+    .products .product .tags > * + *
+    {
+        display: none;
+    }
+
+
+    .products .product .tags > *.mob_count
+    {
+        display: block;
     }
 
 
