@@ -4,6 +4,13 @@ BODY = document.getElementsByTagName('body')[0]
 
 
 document.addEventListener('DOMContentLoaded', function() {
+	// Preloader
+	setTimeout(() => {
+		$('.preloader').hide()
+		$('body').removeClass('lock')
+	}, 2000)
+
+
 	// Main slider
 	let mainSlider = document.querySelector('.main_slider .swiper')
 
@@ -14,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			watchSlidesProgress: true,
 			slideActiveClass: 'active',
 			slideVisibleClass: 'visible',
-			spaceBetween: 24,
 			slidesPerView: 1,
 			pagination: {
 				el: '.swiper-pagination',
@@ -25,6 +31,17 @@ document.addEventListener('DOMContentLoaded', function() {
 			lazy: true,
 			autoplay: {
 				disableOnInteraction: false
+			},
+			breakpoints: {
+				0: {
+					spaceBetween: 6
+				},
+				960: {
+					spaceBetween: 16
+				},
+				1200: {
+					spaceBetween: 24
+				}
 			},
 			on: {
 				init: swiper => setTimeout(() => {

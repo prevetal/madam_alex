@@ -41,14 +41,17 @@
 		<link rel="stylesheet" href="css/response_959.css" media="print, (max-width: 959px)">
 	</head>
 
-	<body>
+	<body class="lock">
+		<div class="preloader">
+			<img src="images/preloader.gif" alt="">
+		</div>
+
 		<div class="wrap bg_white">
 			<div class="main">
 				<header>
 					<div class="cont row">
 						<button class="mob_menu_btn">
-							<svg class="icon"><use xlink:href="images/sprite.svg#ic_menu"></use></svg>
-							<svg class="icon"><use xlink:href="images/sprite.svg#ic_menu_close"></use></svg>
+							<span></span>
 						</button>
 
 						<a href="/" class="logo">
@@ -138,9 +141,7 @@
 							<div class="date">12.04.2023</div>
 						</div>
 
-						<picture class="main_image">
-							<img src="images/tmp/article_img.jpg" alt="" loading="lazy">
-						</picture>
+						<div class="main_image" style="background-image: url('images/tmp/article_img.jpg');"></div>
 
 						<div class="text_block">
 							<section>
@@ -495,7 +496,9 @@
 
 		<section class="cart_info">
 			<div class="data">
-				<button class="close_btn">Закрыть</button>
+				<button class="close_btn">
+					<span>Закрыть</span>
+				</button>
 
 				<div class="title">Корзина <span>1</span></div>
 

@@ -825,8 +825,12 @@
     ---------------------------*/
     .checkout_info
     {
+        z-index: 103;
+
         width: calc(100vw - 460px);
         padding: 16px;
+
+        transform: translateX(100%);
     }
 
 

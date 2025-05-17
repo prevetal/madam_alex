@@ -30,6 +30,13 @@
     /*---------------
         Accordion
     ---------------*/
+    .accordion_item .head
+    {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+
     .accordion_item .head,
     .accordion_item .data
     {
@@ -363,6 +370,33 @@
     }
 
 
+    .main_slider .swiper
+    {
+        width: calc(100% + 20px);
+        margin-right: -10px;
+        margin-left: -10px;
+
+        border-radius: 8px;
+    }
+
+    .main_slider .swiper-horizontal > .swiper-pagination-bullets,
+    .main_slider .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .main_slider .swiper-pagination-custom,
+    .main_slider .swiper-pagination-fraction
+    {
+        height: 22px;
+        padding: 8px;
+
+        gap: 7px;
+    }
+
+
+    .main_slider .swiper-pagination-bullet
+    {
+        height: 6px;
+    }
+
+
     .main_slider .swiper .title
     {
         font-size: var(--font_size_title_small);
@@ -371,6 +405,7 @@
 
     .main_slider .swiper .data
     {
+        height: 531px;
         padding: 16px 10px;
     }
 
@@ -382,15 +417,15 @@
     }
 
 
-    .main_slider .swiper .products .product .thumb
+    .main_slider .swiper .products .product
     {
-        height: 200px;
+        display: none;
     }
 
-    .products .product .thumb .image,
-    .products .product .thumb .image img
+
+    .main_slider .swiper .mob_product
     {
-        max-height: 200px;
+        display: flex;
     }
 
 
@@ -420,6 +455,12 @@
     .main_slider .swiper-slide > .image img
     {
         transform: none;
+    }
+
+
+    .main_slider .swiper-slide > .bg
+    {
+        border-radius: 8px;
     }
 
 
@@ -784,15 +825,15 @@
     .articles .row
     {
         margin-bottom: -16px;
-        margin-left: 0;
+        margin-left: -16px;
     }
 
 
     .articles .row > *
     {
-        width: 100%;
+        width: calc(50% - 16px);
         margin-bottom: 16px;
-        margin-left: 0;
+        margin-left: 16px;
     }
 
 
@@ -860,6 +901,24 @@
     .articles .article.big .name
     {
         font-size: 16px;
+    }
+
+
+    @media (max-width: 619px)
+    {
+        .articles .row
+        {
+            margin-bottom: -16px;
+            margin-left: 0;
+        }
+
+
+        .articles .row > *
+        {
+            width: 100%;
+            margin-bottom: 16px;
+            margin-left: 0;
+        }
     }
 
 
@@ -1145,13 +1204,6 @@
     .cart_info .data
     {
         border-radius: 0;
-    }
-
-
-    .cart_info .close_btn
-    {
-        border-radius: 6px;
-        background: #eceef1;
     }
 
 

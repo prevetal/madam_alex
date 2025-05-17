@@ -41,14 +41,17 @@
 		<link rel="stylesheet" href="css/response_959.css" media="print, (max-width: 959px)">
 	</head>
 
-	<body>
+	<body class="lock">
+		<div class="preloader">
+			<img src="images/preloader.gif" alt="">
+		</div>
+
 		<div class="wrap">
 			<div class="main">
 				<header>
 					<div class="cont row">
 						<button class="mob_menu_btn">
-							<svg class="icon"><use xlink:href="images/sprite.svg#ic_menu"></use></svg>
-							<svg class="icon"><use xlink:href="images/sprite.svg#ic_menu_close"></use></svg>
+							<span></span>
 						</button>
 
 						<div class="logo with_video">
@@ -175,6 +178,43 @@
 													</button>
 												</div>
 											</div>
+
+											<div class="mob_product">
+												<a href="/" class="thumb">
+													<picture class="image">
+														<img src="images/tmp/product_thumb.png" alt="" loading="lazy">
+													</picture>
+
+													<div class="discount">-30%</div>
+												</a>
+
+												<div class="info">
+													<div class="name">
+														<a href="/">Сыворотка пептидная</a>
+													</div>
+
+													<div class="desc">для зоны вокруг глаз с эффектом лифтинга</div>
+
+													<div class="price">
+														<div>24.000 ₽</div>
+														<div class="old">32.000 ₽</div>
+													</div>
+
+													<div class="bottom">
+														<div class="tags">
+															<div>
+																<svg class="icon"><use xlink:href="images/sprite.svg#ic_product_tag2"></use></svg>
+																<span>Для контура глаз</span>
+															</div>
+														</div>
+
+														<button class="buy_btn">
+															<span>В корзину</span>
+															<svg class="icon"><use xlink:href="images/sprite.svg#ic_link_arrow"></use></svg>
+														</button>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 
@@ -234,6 +274,43 @@
 														<span>В корзину</span>
 														<svg class="icon"><use xlink:href="images/sprite.svg#ic_link_arrow"></use></svg>
 													</button>
+												</div>
+											</div>
+
+											<div class="mob_product">
+												<a href="/" class="thumb">
+													<picture class="image">
+														<img src="images/tmp/product_thumb.png" alt="" loading="lazy">
+													</picture>
+
+													<div class="discount">-30%</div>
+												</a>
+
+												<div class="info">
+													<div class="name">
+														<a href="/">Сыворотка пептидная</a>
+													</div>
+
+													<div class="desc">для зоны вокруг глаз с эффектом лифтинга</div>
+
+													<div class="price">
+														<div>24.000 ₽</div>
+														<div class="old">32.000 ₽</div>
+													</div>
+
+													<div class="bottom">
+														<div class="tags">
+															<div>
+																<svg class="icon"><use xlink:href="images/sprite.svg#ic_product_tag2"></use></svg>
+																<span>Для контура глаз</span>
+															</div>
+														</div>
+
+														<button class="buy_btn">
+															<span>В корзину</span>
+															<svg class="icon"><use xlink:href="images/sprite.svg#ic_link_arrow"></use></svg>
+														</button>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -1107,7 +1184,9 @@
 
 		<section class="cart_info">
 			<div class="data">
-				<button class="close_btn">Закрыть</button>
+				<button class="close_btn">
+					<span>Закрыть</span>
+				</button>
 
 				<div class="title">Корзина <span>1</span></div>
 

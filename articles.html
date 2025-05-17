@@ -41,14 +41,17 @@
 		<link rel="stylesheet" href="css/response_959.css" media="print, (max-width: 959px)">
 	</head>
 
-	<body>
+	<body class="lock">
+		<div class="preloader">
+			<img src="images/preloader.gif" alt="">
+		</div>
+
 		<div class="wrap">
 			<div class="main">
 				<header>
 					<div class="cont row">
 						<button class="mob_menu_btn">
-							<svg class="icon"><use xlink:href="images/sprite.svg#ic_menu"></use></svg>
-							<svg class="icon"><use xlink:href="images/sprite.svg#ic_menu_close"></use></svg>
+							<span></span>
 						</button>
 
 						<a href="/" class="logo">
@@ -575,7 +578,9 @@
 
 		<section class="cart_info">
 			<div class="data">
-				<button class="close_btn">Закрыть</button>
+				<button class="close_btn">
+					<span>Закрыть</span>
+				</button>
 
 				<div class="title">Корзина <span>1</span></div>
 
