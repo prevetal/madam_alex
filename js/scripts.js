@@ -620,6 +620,15 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
+const parallax = document.querySelectorAll('.parallax')
+
+
+window.addEventListener('scroll', () => {
+	const y = window.scrollY * 0.10
+	parallax.forEach(el => el.style.transform = `translateY(${y}px)`)
+})
+
+
 
 window.addEventListener('resize', function () {
 	WH = window.innerHeight || document.clientHeight || BODY.clientHeight

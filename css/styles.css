@@ -759,7 +759,7 @@ button
 header
 {
     position: relative;
-    z-index: 9;
+    z-index: 100;
     top: 0;
     left: 0;
 
@@ -2702,6 +2702,8 @@ aside
 .main_slider .swiper-slide
 {
     position: relative;
+
+    overflow: hidden;
 }
 
 
@@ -4559,13 +4561,16 @@ aside
     overflow: hidden;
 
     margin-bottom: 90px;
-    padding-bottom: 56.25%;
 
     border-radius: 8px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50%;
-    background-size: cover;
+}
+
+
+.article_info .main_image img
+{
+    display: block;
+
+    width: 100%;
 }
 
 
