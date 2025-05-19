@@ -5534,10 +5534,7 @@ aside
 .products .product .thumb
 {
     display: flex;
-    align-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
 
     height: 372px;
 
@@ -5547,7 +5544,18 @@ aside
 }
 
 
-.products .product .thumb .image,
+.products .product .thumb .image
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    height: 100%;
+}
+
+
 .products .product .thumb .image img
 {
     display: block;

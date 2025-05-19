@@ -59,6 +59,30 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 
+	// Product thumbs slider
+	const productThumbsSliders = [],
+		productThumbs = document.querySelectorAll('.product .thumbs .swiper')
+
+	productThumbs.forEach((el, i) => {
+		el.classList.add('product_thumbs_s' + i)
+
+		let options = {
+			loop: true,
+			loopAdditionalSlides: 1,
+			speed: 500,
+			nested: true,
+			watchSlidesProgress: true,
+			slideActiveClass: 'active',
+			slideVisibleClass: 'visible',
+			lazy: true,
+			spaceBetween: 0,
+			slidesPerView: 1
+		}
+
+		productThumbsSliders.push(new Swiper('.product_thumbs_s' + i, options))
+	})
+
+
 	// Video collections slider
 	const videoCollectionsSliders = [],
 		videoCollections = document.querySelectorAll('.video_collections .swiper')
